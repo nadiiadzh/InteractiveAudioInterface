@@ -1,0 +1,32 @@
+button{
+    width: 70px;
+    height: 32px;
+    border-radius: 6px;
+}
+.content1{
+    background: rgb(20, 2, 11);
+    width: 400px;
+    float: left;
+}
+#playList{
+    width: 260px;
+    height: 350px;
+    background: rgb(235, 227, 226);
+    float: left;
+    margin-left: 20px;
+    padding: 10px;
+}
+.box1{
+    margin: 20px 50px;
+}
+.box2{
+    width: 300px;
+    padding: 10px;
+    margin: auto;
+}
+img{
+    width: 300px;
+}
+.active{
+    background: red;
+}
