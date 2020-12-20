@@ -63,6 +63,9 @@ function prev(){
     if(count > 0){
         count--;
         play();
+    }else{
+        count = songs.length;
+        play();
     }
 }
 
