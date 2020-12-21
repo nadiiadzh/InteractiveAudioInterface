@@ -5,35 +5,34 @@ let playingSong = false;
 let songs = [
     {
         name: 'track 1',
-        path: 'audio/track1.mp3',
+        src: 'audio/track1.mp3',
         img:   'img/img1.jpg',
         singer: 'First singer'
     },
     {
         name: 'track 2',
-        path: 'audio/track2.mp3',
+        src: 'audio/track2.mp3',
         img:   'img/img2.jpg',
         singer: 'Second singer'
     },
     {
         name: 'track 3',
-        path: 'audio/track3.mp3',
+        src: 'audio/track3.mp3',
         img:   'img/img3.jpg',
         singer: 'Third singer'
     },
     {
         name: 'track 4',
-        path: 'audio/track4.mp3',
+        src: 'audio/track4.mp3',
         img:   'img/img4.jpg',
         singer: 'Fourth singer'
     }
 ];
 
-
 window.onload = function(){
 
-   var mp3 = document.getElementById("mp3"); //reference to the audio
- 
+    let mp3 = document.getElementById("mp3"); //reference to the audio
+
 //adding event listener to the buttons 
 
     let playBtn = document.querySelector(`.play`)
@@ -48,7 +47,7 @@ window.onload = function(){
     let prevBtn = document.querySelector(`.prev`)
     prevBtn.addEventListener('click', prev)
 
-//adding list of songs names
+//adding list of songs names 
 
     var ul = document.getElementById("ul");
 
@@ -74,28 +73,36 @@ function changeColor(){
         }
 
 }
-
+// loading song  
 function loadTrack(){
+   
+    let trackImg = document.querySelector(`.trackImg`);
+    let trackTitle = document.querySelector(`.trackTitle`);
+    let trackArtist = document.querySelector(`.trackArtist`);
 
-    mp3.src = songs[count].path;
+    mp3.src = songs[count].src;
+	trackTitle.innerHTML = songs[count].name;	
+	trackImg.src = songs[count].img;
+    trackArtist.innerHTML = songs[count].singer;
     mp3.load();
-
 }
 
+//checking if the song is playing
 function justplay(){
-    if(playingSong == false){
+    if(playingSong == false){       
         play();
     }else{   
-       stop();
+        stop();
     }
 }
 
+// playing the song
 function play(){
     changeColor();
     mp3.play();
     playingSong = true;      
 }
-
+// playing the next song in the list
 function next(){
     if(count < songs.length-1){
         count++;
@@ -109,6 +116,7 @@ function next(){
     }
 }
 
+//playing the previous song
 function prev(){
     if(count > 0){
         count--;
@@ -121,7 +129,7 @@ function prev(){
         play()
     }
 }
-
+// pause for the song
 function stop(){
     mp3.pause();
     playingSong = false;
