@@ -1,32 +1,67 @@
-button{
-    width: 70px;
-    height: 32px;
-    border-radius: 6px;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg, #867de4, #ddaed9, #4834d4 );
+    height: 100vh;
 }
-.content1{
+
+a{
+    font-size: 1.5em;
+    margin: 0 30px;
+ 
+}
+a:hover{
+    color: rgb(92, 12, 129);
+}
+p{
+    font-size: 16px;
+}
+.content{
     background: rgb(20, 2, 11);
     width: 400px;
-    float: left;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    grid-template-columns: repeat(3,1fr);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: antiquewhite;
+    text-align: center;
 }
 #playList{
-    width: 260px;
-    height: 350px;
+    width: 200px;
     background: rgb(235, 227, 226);
+    color: rgb(27, 2, 26);
+    margin: 20px;
     float: left;
-    margin-left: 20px;
-    padding: 10px;
 }
 .box1{
-    margin: 20px 50px;
+    margin: 10px 50px;
 }
 .box2{
-    width: 300px;
-    padding: 10px;
-    margin: auto;
+   
+    width: 100%;
+    text-align: center;
 }
 img{
-    width: 300px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    
 }
 .active{
-    background: red;
+    background: rgb(92, 12, 129);
+}
+li{
+    font-size: 18px;
+    line-height: 1.5em;
+}
+#ul {
+	list-style-type: none;
+	padding-inline-start: 0;
+}
+#mp3{
+    display: none;
 }

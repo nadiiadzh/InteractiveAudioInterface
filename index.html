@@ -4,28 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio Player</title>
+  
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/befc96fbe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="content1"> 
-    <div class="box1" >
-        <img class="trackImg" src="img/apple-music-note.jpg"><br>
-        <div>
-            <p class="trackTitle">Song title</p>
-            <p class="trackArtist">Artist</p>
+    <div class="content"> 
+        <div class="box1" >
+            <h2>Play your music</h2>
+            <img class="trackImg" src="img/apple-music-note.jpg"><br>
+            <div>
+                <p class="trackTitle">Song title</p>
+                <p class="trackArtist">Artist</p>
+            </div>
+            <audio id="mp3" src="audio/track1.mp3" controls  ></audio><br>
         </div>
-        <audio id="mp3" src="audio/track1.mp3" controls  ></audio><br>
+        <div class="box2">
+            <a class="prev"><i class="fa fa-step-backward" ></i></a> 
+            <a class="play"><i class="fa fa-play" ></i></a>
+            <a class="next"><i class="fas fa-step-forward" ></i></a>
+        </div>
+        <div id="playList">
+             <h3>Playlist:</h3>
+            <ul id="ul"></ul>
+        </div>
     </div>
-    <div class="box2">
-        <button class="prev">Previous </button> 
-        <button class="stop">Stop </button>
-        <button class="play">Play </button>
-        <button class="next">Next </button>
-    </div>
-</div>
-    <div id="playList">
-        <ul id="ul"></ul>
-    </div>
+    
   <script src="js/script.js"></script>
 </body>
 </html>

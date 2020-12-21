@@ -37,9 +37,6 @@ window.onload = function(){
 
     let playBtn = document.querySelector(`.play`)
     playBtn.addEventListener('click', justplay)
-  
-    let pauseBtn = document.querySelector(`.stop`)
-    pauseBtn.addEventListener('click', stop)
 
     let nextBtn = document.querySelector(`.next`)
     nextBtn.addEventListener('click', next)
@@ -71,7 +68,6 @@ function changeColor(){
                 color[x].classList.remove("active");
             }
         }
-
 }
 // loading song  
 function loadTrack(){
@@ -89,8 +85,10 @@ function loadTrack(){
 
 //checking if the song is playing
 function justplay(){
-    if(playingSong == false){       
-        play();
+    
+    if(playingSong == false){ 
+        loadTrack(count);      
+        play();        
     }else{   
         stop();
     }
@@ -98,10 +96,14 @@ function justplay(){
 
 // playing the song
 function play(){
+    let playBtn = document.querySelector(`.play`)
     changeColor();
     mp3.play();
-    playingSong = true;      
+    playingSong = true; 
+    playBtn.innerHTML = '<i class="fa fa-pause"></i>';
+        
 }
+
 // playing the next song in the list
 function next(){
     if(count < songs.length-1){
@@ -129,9 +131,12 @@ function prev(){
         play()
     }
 }
+
 // pause for the song
 function stop(){
+    let playBtn = document.querySelector(`.play`)
     mp3.pause();
     playingSong = false;
+    playBtn.innerHTML = '<i class="fa fa-play"></i>';
 }
 
